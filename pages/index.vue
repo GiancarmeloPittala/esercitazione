@@ -1,5 +1,5 @@
 <template>
   <div>
-    Questa è la index
+    <card/>
   </div>
 </template>
