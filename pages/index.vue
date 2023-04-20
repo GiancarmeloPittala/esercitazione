@@ -1,30 +1,9 @@
 <template>
   <div>
-    <Input v-model="testo" />
-    {{ testo }}
-    <Button color="nero" dim="large">
-      <template v-slot:label>
-       label
-      </template>
-      <p>
-        testo
-      </p>
-    </Button>
-    <Button color="rosso" dim="small">
-      secondo testo
-    </Button>
-
-    <Button color="nero">
-      tttt
-    </Button>
-
-    <Button color="rosso">
-      ttt
-    </Button>
-
+    <Pokemon :pokemon="poke" v-for="poke of pokemon.results" :key="poke.name" />
   </div>
 </template>
 
 <script setup>
-const testo = ref("")
+  const { data: pokemon } = await useFetch('https://pokeapi.co/api/v2/pokemon')
 </script>
